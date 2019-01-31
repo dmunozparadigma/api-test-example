@@ -1,0 +1,1098 @@
+openapi: 3.0.0
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/ojodev/recipe-book/1.0.0
+  - url: https://localhost:8080/cooking-hero/v1
+    description: Developer localhost
+info:
+  description: Api for use recipes in Recipes app
+  version: 0.0.1
+  title: Recipe book API
+  contact:
+    email: davidmunozsantos@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: users
+    description: users info
+  - name: recipes
+    description: cooking recipes info
+  - name: products
+    description: products used in recipes
+  - name: cousine-types
+    description: cousine types for recipes
+paths:
+  /recipes:
+    get:
+      tags:
+        - recipes
+      summary: searches recipes
+      operationId: getRecipes
+      description: |
+        Search for recipe list
+      parameters:
+        - in: query
+          name: createdFrom
+          description: initial date of recipe creation, useful for multiple page lists searches
+          required: false
+          schema:
+            type: string
+            format: date-time
+            example: '2019-01-23T17:32:28Z'
+        - in: query
+          name: name
+          description: recipe name, partial searches allowed
+          required: false
+          schema:
+            type: string
+            example: potatoe
+        - in: query
+          name: userId
+          description: user id that create the recipe
+          required: false
+          schema:
+            type: string
+            example: 324399845004
+        - in: query
+          name: fields
+          description: recipe fields returned in response, separated by ','
+          required: false
+          schema:
+            type: string
+            example: name,description,cousine-type,preparation-time,cooking-time
+        - in: query
+          name: skip
+          description: number of page for skip (pagination)
+          required: false
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            example: 2
+        - in: query
+          name: limit
+          description: maximum number of records returned, by default 20
+          required: false
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            maximum: 30
+            example: 10
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Recipe'
+        '204':
+          description: no results
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - recipes
+      summary: adds a recipe
+      operationId: addRecipe
+      description: Adds an recipe to recipe book
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecipeRequest'
+        description: Recipe to add
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest' 
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /recipes/{recipe-id}:
+    get:
+      tags:
+        - recipes
+      summary: get recipe by id
+      operationId: getRecipe
+      description: |
+        Search recipe by id
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: detail of a recipe
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Recipe'  
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'  
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      tags:
+        - recipes
+      summary: update recipe
+      operationId: updateRecipe
+      description: |
+        Update recipe info
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecipeRequest'
+        description: Recipe to update
+      responses:
+        '204':
+          description: recipe updated
+        '400':
+          $ref: '#/components/responses/BadRequest' 
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'   
+    delete:
+      tags:
+        - recipes
+      summary: delete recipe
+      operationId: deleteRecipe
+      description: |
+        Delete recipe
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: recipe deleted
+        '400':
+          $ref: '#/components/responses/BadRequest' 
+        '404':
+          $ref: '#/components/responses/NotFound' 
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+                
+  /recipes/{recipe-id}/ingredients:
+    get:
+      tags:
+        - recipes
+      summary: get recipe ingredient list
+      operationId: getIngredients
+      description: |
+        Search ingredients in a recipe
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ingredient'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - recipes
+      summary: adds a new ingredien in a recipe or change quantity in a existing ingredient
+      operationId: addIngredient
+      description: Adds ingredient in a recipe
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ingredient'
+        description: ingredient to add
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /recipes/{recipe-id}/ingredients/{ingredient-id}:
+    get:
+      tags:
+        - recipes
+      summary: obtain ingredient details
+      operationId: getIngredient
+      description: |
+        Get ingredient details
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: ingredient-id
+          description: ingredient id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ingredient'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      tags:
+        - recipes
+      summary: update ingredient in a recipe
+      operationId: updateIngredient
+      description: |
+        Update ingredient info
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: ingredient-id
+          description: ingredient id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ingredient'
+        description: ingredient to update
+      responses:
+        '204':
+          description: ingredient updated
+        '400':
+          $ref: '#/components/responses/BadRequest' 
+        '404':
+          $ref: '#/components/responses/NotFound' 
+        '500':
+          $ref: '#/components/responses/InternalServerError' 
+    delete:
+      tags:
+        - recipes
+      summary: delete ingredient of a recipe
+      operationId: deleteIngredient
+      description: |
+        Delete ingredient
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: ingredient-id
+          description: ingredient id
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: ingredient deleted
+        '400':
+          $ref: '#/components/responses/BadRequest'   
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /recipes/{recipe-id}/steps:
+    get:
+      tags:
+        - recipes
+      summary: get steps to cook the recipe
+      operationId: getSteps
+      description: |
+        Search steps for a recipe
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: steps for cook a recipe
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Step'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - recipes
+      summary: adds a new step (in order) to the list of steps in a recipe
+      operationId: addStep
+      description: Adds a step to a recipe step list
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Step'
+        description: Step to add
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /recipes/{recipe-id}/steps/{step-number}:
+    put:
+      tags:
+        - recipes
+      summary: update step in a recipe
+      operationId: updateStep
+      description: |
+        Update step info
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: step-number
+          description: step number in the step list of the recipe
+          required: true
+          schema:
+            type: number
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Step'
+        description: step description to update
+      responses:
+        '204':
+          description: step updated
+        '400':
+          $ref: '#/components/responses/BadRequest' 
+        '404':
+          $ref: '#/components/responses/NotFound' 
+        '500':
+          $ref: '#/components/responses/InternalServerError' 
+    delete:
+      tags:
+        - recipes
+      summary: delete step of a recipe
+      operationId: deleteStep
+      description: |
+        Delete step of a recipe and order other steps in the recipe
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: step-number
+          description: step number in the step list of the recipe
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: step deleted and other steps ordered
+        '400':
+          $ref: '#/components/responses/BadRequest'   
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+# DMS Photos falta por definir, deberia ser un nuevo servicio
+
+  /recipes/{recipe-id}/photos:
+    get:
+      tags:
+        - photos
+      summary: get photo ids of a recipe
+      operationId: getRecipePhotos
+      description: |
+        Search photos for a recipe
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: list of photos related to a recipe
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PhotoRef'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - photos
+      summary: adds a new photo to a recipe
+      operationId: addPhoto
+      description: Adds photo related to a recipe
+      parameters:
+        - in: path
+          name: recipe-id
+          description: recipe id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Step' # TODO DMS Cambiar el formato para multipart
+        description: photo to add
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+          
+  /products:
+    get:
+      tags:
+        - products
+      summary: get product list
+      operationId: getProducts
+      description: |
+        Search products
+      responses:
+        '200':
+          description: product list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - products
+      summary: add a product
+      operationId: addProduct
+      description: |
+        Add a new product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+                
+  /products/{product-id}:
+    get:
+      tags:
+        - products
+      summary: get a product
+      operationId: getProduct
+      description: |
+        Search for a product
+      parameters:
+        - in: path
+          name: product-id
+          description: id product
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      tags:
+        - products
+      summary: delete a product
+      operationId: deleteProduct
+      description: |
+        Delete product
+      parameters:
+        - in: path
+          name: product-id
+          description: id product
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: product deleted
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+          
+  /cousine-types:
+    get:
+      tags:
+        - cousine-types
+      summary: get cousine types
+      operationId: getCousineTypes
+      description: |
+        Cousine types
+      responses:
+        '200':
+          description: cousine type list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - cousine-types
+      summary: add one cousine types
+      operationId: addCousineType
+      description: |
+        Add cousine type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /cousine-types/{cousine-type-id}:
+    delete:
+      tags:
+        - cousine-types
+      summary: delete a cousine type
+      operationId: deleteCousineType
+      description: |
+        Delete cousine type
+      parameters:
+        - in: path
+          name: cousine-type-id
+          description: cousine type
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: product deleted
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /users:
+    get:
+      tags:
+        - users
+      summary: get users
+      operationId: getUsers
+      description: |
+        Search users
+      responses:
+        '200':
+          description: user list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - users
+      summary: add a user
+      operationId: addUser
+      description: |
+        Add a new user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+                
+  /users/{user-id}:
+    get:
+      tags:
+        - users
+      summary: get user details
+      operationId: getUser
+      description: |
+        Search for a user
+      parameters:
+        - in: path
+          name: user-id
+          description: user id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      tags:
+        - users
+      summary: update user
+      operationId: updateUser
+      description: |
+        Update user info
+      parameters:
+        - in: path
+          name: user-id
+          description: user id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserUpdate'
+      responses:
+        '204':
+          description: user updated
+        '400':
+           $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+          
+  /users/{user-id}/recipes: 
+    get: #TODO: duplicated with GET /recipes 
+      tags:
+        - users
+      summary: get user recipes
+      operationId: getUserRecipes
+      description: |
+        Search recipes created for a user
+      parameters:
+        - in: path
+          name: user-id
+          description: user id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecipeRequest'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  
+components:
+  responses:
+    Created:
+      description: Resource created
+      headers:
+        Location:
+          schema:
+            type: string
+    BadRequest:
+      description: bad input parameter
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    NotFound:
+      description: not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    InternalServerError:
+      description: internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'    
+  schemas:
+    Recipe:
+      type: object
+      description: Recipe created by a user
+      required:
+        - id
+        - name
+        - description
+        - cousine-type
+        - preparation-time
+        - cooking-time
+        - difficulty
+      properties:
+        id:
+          type: string
+          description: recipe id
+          example: 8899457821
+        name:
+          type: string
+          description: name of the recipe
+          example: spanish tortilla
+        description:
+          type: string
+          description: general description of the recipe
+          example: classic Spanish omelette filled with pan-fried potatoes and onion.
+        cousine-type:
+          type: array
+          items:
+            type: string
+          example: [spanish,veggie]
+          description: cousine type
+        preparation-time:
+          type: number
+          description: ingredient preparation time in minutes (cut potatoes, ...)
+          example: 15      
+        cooking-time:
+          type: number
+          description: cooking time in minutes (boil, ...)
+          example: 40
+        difficulty:
+          type: number
+          description: difficult level
+          minimum: 1
+          maximum: 5
+          example: 4
+        photo:
+          $ref: '#/components/schemas/PhotoRef'
+        steps:
+          type: array
+          items:
+            $ref: '#/components/schemas/Step'
+        ingredients:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ingredient'
+        user:
+          type: string
+          description: owner user name
+          example: ojodev
+        creationDate:
+          type: string
+          description: recipe creation date
+          format: date-time
+          example: '2019-01-23T17:32:28Z'
+          
+    RecipeRequest:
+      type: object
+      description: Request to create a new user
+      required:
+        - name
+        - description
+        - preparation-time
+      properties:
+        name:
+          type: string
+          description: name of the recipe
+          example: spanish tortilla
+        description:
+          type: string
+          description: general description of the recipe
+          example: classic Spanish omelette filled with pan-fried potatoes and onion.
+        cousine-type:
+          type: array
+          items:
+            type: string
+          example: [spanish,veggie]
+          description: cousine type
+        preparation-time:
+          type: number
+          description: ingredient preparation time in minutes (cut potatoes, ...)
+          example: 15      
+        cooking-time:
+          type: number
+          description: cooking time in minutes (boil, ...)
+          example: 40
+        difficulty:
+          type: number
+          description: difficult level
+          minimum: 1
+          maximum: 5
+          example: 4
+        photo:
+          $ref: '#/components/schemas/PhotoRef'
+        steps:
+          type: array
+          items:
+            $ref: '#/components/schemas/Step'
+        ingredients:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ingredient'
+        user:
+          type: string
+          description: owner user name
+          example: ojodev
+          
+          
+    PhotoRef:
+      type: object
+      description: Reference to a photo resource
+      required:
+        - href
+      properties:
+        href:
+          type: string
+          description: photo href
+          example: media/photo/21344123123
+ 
+    Ingredient:
+      type: object
+      description: ingredient and its quantity used in a recipe
+      required:
+        - product
+      properties:
+        product:
+          type: string
+          description: product name
+          example: potatoes
+        quantity:
+          type: number
+          description: number of product units or quantity
+          example: 2
+        unit:
+          type: string
+          description: type of measure
+          example: gr
+          
+    Product:
+      type: object
+      description: product of a ingredient
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: product name
+          example: potatoe
+          
+    Step:
+      type: object
+      description: step to cook a recipe
+      required:
+        - description
+      properties:
+        description:
+          type: string
+          description: description of ordered actions to cook the recipe
+          example: In a large frying pan or skillet, heat olive oil over medium-high heat.
+        time:
+          type: number
+          description: time in minutes to finish this step (cooking or/and preparation time)
+          example: 15
+        media:
+          $ref: '#/components/schemas/Media'
+          
+    Media:
+      type: object
+      description: media (photo or video) associated to a recipe
+      required:
+        - mediaType
+        - href
+      properties:
+        mediaType:
+          type: string
+          description: media type (photo or video)
+          enum: [PHOTO, VIDEO]
+          example: PHOTO
+        href:
+          type: string
+          description: href to photo or video resource
+          example: media/photos/23425324
+          
+        
+    User:
+      type: object
+      description: cooking hero user
+      properties:
+        username:
+          type: string
+          description: user id name
+          example: ojodev
+        name:
+          type: string
+          description: user real name
+          example: david
+        email:
+          type: string
+          description: user personal email
+          example: ojodev@gmail.com
+        active:
+          type: boolean
+          description: user is active or not
+          example: true
+          
+    
+    UserUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+          description: user real name
+          example: david
+        email:
+          type: string
+          description: user personal email
+          example: ojodev@gmail.com
+        active:
+          type: boolean
+          description: user is active or not
+          example: true
+    
+    ApiError:
+      type: object
+      properties:
+        code:
+          type: string
+          description: error code id
+          example: NAME_NOT_VALID
+        description:
+          type: string
+          description: error description
+          example: Ingredient name is not valid
