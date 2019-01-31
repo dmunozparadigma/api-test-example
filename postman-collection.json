@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "354010e1-984a-41b4-9e23-f10fed2777d1",
+		"name": "API Gateway Softwage AG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET recipes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-Gateway-APIKey",
+						"value": "508f7fa3-7471-4956-a827-5021ba590589",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://dmunozparadigma.gateway.webmethodscloud.com/gateway/Cooking/0.0.1/recipes",
+					"protocol": "http",
+					"host": [
+						"dmunozparadigma",
+						"gateway",
+						"webmethodscloud",
+						"com"
+					],
+					"path": [
+						"gateway",
+						"Cooking",
+						"0.0.1",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-Gateway-APIKey",
+						"value": "508f7fa3-7471-4956-a827-5021ba590589",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://dmunozparadigma.gateway.webmethodscloud.com/gateway/Cooking/0.0.1/recipes",
+					"protocol": "http",
+					"host": [
+						"dmunozparadigma",
+						"gateway",
+						"webmethodscloud",
+						"com"
+					],
+					"path": [
+						"gateway",
+						"Cooking",
+						"0.0.1",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-Gateway-APIKey",
+						"value": "508f7fa3-7471-4956-a827-5021ba590589",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://dmunozparadigma.gateway.webmethodscloud.com/gateway/Cooking/0.0.1/recipes",
+					"protocol": "http",
+					"host": [
+						"dmunozparadigma",
+						"gateway",
+						"webmethodscloud",
+						"com"
+					],
+					"path": [
+						"gateway",
+						"Cooking",
+						"0.0.1",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET intentory mock",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-Gateway-APIKey",
+						"type": "text",
+						"value": "508f7fa3-7471-4956-a827-5021ba590589",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/ojodev/test/1.0.0/inventory",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"ojodev",
+						"test",
+						"1.0.0",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET intentory API Gateway",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8f595e95-2b99-45f2-ab4c-d92bc2db4cbe",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-Gateway-APIKey",
+						"type": "text",
+						"value": "508f7fa3-7471-4956-a827-5021ba590589"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://dmunozparadigma.gateway.webmethodscloud.com/gateway/testAPI/0.0.1/inventory",
+					"protocol": "http",
+					"host": [
+						"dmunozparadigma",
+						"gateway",
+						"webmethodscloud",
+						"com"
+					],
+					"path": [
+						"gateway",
+						"testAPI",
+						"0.0.1",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET cousine-types mock",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-Gateway-APIKey",
+						"value": "508f7fa3-7471-4956-a827-5021ba590589",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://dmunozparadigma.gateway.webmethodscloud.com/gateway/Cooking/0.0.1/recipes",
+					"protocol": "http",
+					"host": [
+						"dmunozparadigma",
+						"gateway",
+						"webmethodscloud",
+						"com"
+					],
+					"path": [
+						"gateway",
+						"Cooking",
+						"0.0.1",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET recipes swaggerhub",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-Gateway-APIKey",
+						"value": "508f7fa3-7471-4956-a827-5021ba590589",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://dmunozparadigma.gateway.webmethodscloud.com/gateway/Cooking/0.0.1/recipes",
+					"protocol": "http",
+					"host": [
+						"dmunozparadigma",
+						"gateway",
+						"webmethodscloud",
+						"com"
+					],
+					"path": [
+						"gateway",
+						"Cooking",
+						"0.0.1",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET recipes swaggerhub Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-Gateway-APIKey",
+						"value": "508f7fa3-7471-4956-a827-5021ba590589",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://dmunozparadigma.gateway.webmethodscloud.com/gateway/Cooking/0.0.1/recipes",
+					"protocol": "http",
+					"host": [
+						"dmunozparadigma",
+						"gateway",
+						"webmethodscloud",
+						"com"
+					],
+					"path": [
+						"gateway",
+						"Cooking",
+						"0.0.1",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
