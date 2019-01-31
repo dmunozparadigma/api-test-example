@@ -1,0 +1,2353 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "354010e1-984a-41b4-9e23-f10fed2777d1"
+    },
+    "item": [
+      {
+        "id": "72236959-68f1-42c2-8562-c6c8a1d6c945",
+        "name": "GET recipes",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "Cooking",
+              "0.0.1",
+              "recipes"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": [],
+        "event": []
+      },
+      {
+        "id": "295b4367-b1c5-4e95-8753-5eeda2c4e98d",
+        "name": "GET products",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "Cooking",
+              "0.0.1",
+              "recipes"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": [],
+        "event": []
+      },
+      {
+        "id": "e198bce4-baf0-437c-aa0b-8a4aa17582d0",
+        "name": "GET users",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "Cooking",
+              "0.0.1",
+              "recipes"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": [],
+        "event": []
+      },
+      {
+        "id": "0e0a4696-c192-4708-9942-279ebbac8fe9",
+        "name": "GET intentory mock",
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "ojodev",
+              "test",
+              "1.0.0",
+              "inventory"
+            ],
+            "host": [
+              "virtserver",
+              "swaggerhub",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "disabled": true,
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": [],
+        "event": []
+      },
+      {
+        "id": "a95b9195-7a17-400f-823f-9f9cf370c78f",
+        "name": "GET intentory API Gateway",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "testAPI",
+              "0.0.1",
+              "inventory"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "8f595e95-2b99-45f2-ab4c-d92bc2db4cbe",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status code is 200\", function () {",
+                "    pm.response.to.have.status(200);",
+                "});",
+                ""
+              ],
+              "_lastExecutionId": "6674bc2f-6bef-4666-a8c6-bb78187ed002"
+            }
+          }
+        ]
+      },
+      {
+        "id": "1b91aedd-4ac2-4e5e-9b27-6a53c531486a",
+        "name": "GET cousine-types mock",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "Cooking",
+              "0.0.1",
+              "recipes"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": [],
+        "event": []
+      },
+      {
+        "id": "fb8e6d2c-14b7-4230-84c1-7d74287ecd00",
+        "name": "GET recipes swaggerhub",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "Cooking",
+              "0.0.1",
+              "recipes"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": [],
+        "event": []
+      },
+      {
+        "id": "4a694ab9-f813-4a4a-861f-b2e964e01604",
+        "name": "GET recipes swaggerhub Copy",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "Cooking",
+              "0.0.1",
+              "recipes"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": [],
+        "event": []
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "354010e1-984a-41b4-9e23-f10fed2777d1",
+      "name": "API Gateway Softwage AG",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "id": "5a309b5a-7bbe-42be-bf6e-821ce0ce7d14",
+    "values": []
+  },
+  "globals": {
+    "id": "18abb476-6637-4fcd-8bce-98948b58a261",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 8,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 8,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 8,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 8,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 694.375,
+      "started": 1548950838912,
+      "completed": 1548950844734
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 8,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "7e28c807-26a1-4ec4-879e-86bce592bd96",
+          "httpRequestId": "0b6e7fcb-3e4e-41b4-994b-1074c85a3741"
+        },
+        "item": {
+          "id": "72236959-68f1-42c2-8562-c6c8a1d6c945",
+          "name": "GET recipes",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "gateway",
+                "Cooking",
+                "0.0.1",
+                "recipes"
+              ],
+              "host": [
+                "dmunozparadigma",
+                "gateway",
+                "webmethodscloud",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "x-Gateway-APIKey",
+                "value": "508f7fa3-7471-4956-a827-5021ba590589"
+              }
+            ],
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "Cooking",
+              "0.0.1",
+              "recipes"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.6.0"
+            },
+            {
+              "key": "Host",
+              "value": "dmunozparadigma.gateway.webmethodscloud.com"
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "b6cfdccb-d4a7-4d04-bce4-f9c2b4da2a8e",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "X-Requested-With,Content-Type,Accept,Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 31 Jan 2019 16:07:19 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "APICLOUD-ALB"
+            },
+            {
+              "key": "Content-Length",
+              "value": "32"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              32,
+              34,
+              115,
+              116,
+              114,
+              105,
+              110,
+              103,
+              34,
+              32,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 945,
+          "responseSize": 12
+        },
+        "id": "72236959-68f1-42c2-8562-c6c8a1d6c945"
+      },
+      {
+        "cursor": {
+          "ref": "3a203156-d9e9-421a-8bb7-347115f49e59",
+          "length": 8,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "a6b7b7d8-3935-4cf1-acb2-520d05a8c76e"
+        },
+        "item": {
+          "id": "295b4367-b1c5-4e95-8753-5eeda2c4e98d",
+          "name": "GET products",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "gateway",
+                "Cooking",
+                "0.0.1",
+                "recipes"
+              ],
+              "host": [
+                "dmunozparadigma",
+                "gateway",
+                "webmethodscloud",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "x-Gateway-APIKey",
+                "value": "508f7fa3-7471-4956-a827-5021ba590589"
+              }
+            ],
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "Cooking",
+              "0.0.1",
+              "recipes"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.6.0"
+            },
+            {
+              "key": "Host",
+              "value": "dmunozparadigma.gateway.webmethodscloud.com"
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "1c198558-f067-4095-9edc-a2be5ac241ed",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "X-Requested-With,Content-Type,Accept,Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 31 Jan 2019 16:07:20 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "APICLOUD-ALB"
+            },
+            {
+              "key": "Content-Length",
+              "value": "32"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              32,
+              34,
+              115,
+              116,
+              114,
+              105,
+              110,
+              103,
+              34,
+              32,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 666,
+          "responseSize": 12
+        },
+        "id": "295b4367-b1c5-4e95-8753-5eeda2c4e98d"
+      },
+      {
+        "cursor": {
+          "ref": "5f44ecf3-2193-47ea-86ad-984dfac1ed54",
+          "length": 8,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "a5075ddc-6364-4f0b-8dc4-b971e74618b3"
+        },
+        "item": {
+          "id": "e198bce4-baf0-437c-aa0b-8a4aa17582d0",
+          "name": "GET users",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "gateway",
+                "Cooking",
+                "0.0.1",
+                "recipes"
+              ],
+              "host": [
+                "dmunozparadigma",
+                "gateway",
+                "webmethodscloud",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "x-Gateway-APIKey",
+                "value": "508f7fa3-7471-4956-a827-5021ba590589"
+              }
+            ],
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "Cooking",
+              "0.0.1",
+              "recipes"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.6.0"
+            },
+            {
+              "key": "Host",
+              "value": "dmunozparadigma.gateway.webmethodscloud.com"
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "128f2db8-9780-45d6-98d8-0ba906eaa992",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "X-Requested-With,Content-Type,Accept,Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 31 Jan 2019 16:07:21 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "APICLOUD-ALB"
+            },
+            {
+              "key": "Content-Length",
+              "value": "32"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              32,
+              34,
+              115,
+              116,
+              114,
+              105,
+              110,
+              103,
+              34,
+              32,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 664,
+          "responseSize": 12
+        },
+        "id": "e198bce4-baf0-437c-aa0b-8a4aa17582d0"
+      },
+      {
+        "cursor": {
+          "ref": "a335010a-675c-43f3-ab90-caed68d00140",
+          "length": 8,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "9456ffad-bb72-422d-aac2-b4f3c910d507"
+        },
+        "item": {
+          "id": "0e0a4696-c192-4708-9942-279ebbac8fe9",
+          "name": "GET intentory mock",
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "ojodev",
+                "test",
+                "1.0.0",
+                "inventory"
+              ],
+              "host": [
+                "virtserver",
+                "swaggerhub",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "disabled": true,
+                "key": "x-Gateway-APIKey",
+                "value": "508f7fa3-7471-4956-a827-5021ba590589"
+              }
+            ],
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "ojodev",
+              "test",
+              "1.0.0",
+              "inventory"
+            ],
+            "host": [
+              "virtserver",
+              "swaggerhub",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "disabled": true,
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.6.0"
+            },
+            {
+              "key": "Host",
+              "value": "virtserver.swaggerhub.com"
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "e1768f7b-b233-4341-83b5-cb4e8ee7d66f",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Thu, 31 Jan 2019 16:07:21 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "213"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "X-Requested-With,Content-Type,Accept,Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              32,
+              123,
+              10,
+              32,
+              32,
+              34,
+              105,
+              100,
+              34,
+              32,
+              58,
+              32,
+              34,
+              100,
+              50,
+              57,
+              48,
+              102,
+              49,
+              101,
+              101,
+              45,
+              54,
+              99,
+              53,
+              52,
+              45,
+              52,
+              98,
+              48,
+              49,
+              45,
+              57,
+              48,
+              101,
+              54,
+              45,
+              100,
+              55,
+              48,
+              49,
+              55,
+              52,
+              56,
+              102,
+              48,
+              56,
+              53,
+              49,
+              34,
+              44,
+              10,
+              32,
+              32,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              32,
+              58,
+              32,
+              34,
+              87,
+              105,
+              100,
+              103,
+              101,
+              116,
+              32,
+              65,
+              100,
+              97,
+              112,
+              116,
+              101,
+              114,
+              34,
+              44,
+              10,
+              32,
+              32,
+              34,
+              114,
+              101,
+              108,
+              101,
+              97,
+              115,
+              101,
+              68,
+              97,
+              116,
+              101,
+              34,
+              32,
+              58,
+              32,
+              34,
+              50,
+              48,
+              49,
+              54,
+              45,
+              48,
+              56,
+              45,
+              50,
+              57,
+              84,
+              48,
+              57,
+              58,
+              49,
+              50,
+              58,
+              51,
+              51,
+              46,
+              48,
+              48,
+              49,
+              90,
+              34,
+              44,
+              10,
+              32,
+              32,
+              34,
+              109,
+              97,
+              110,
+              117,
+              102,
+              97,
+              99,
+              116,
+              117,
+              114,
+              101,
+              114,
+              34,
+              32,
+              58,
+              32,
+              123,
+              10,
+              32,
+              32,
+              32,
+              32,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              32,
+              58,
+              32,
+              34,
+              65,
+              67,
+              77,
+              69,
+              32,
+              67,
+              111,
+              114,
+              112,
+              111,
+              114,
+              97,
+              116,
+              105,
+              111,
+              110,
+              34,
+              44,
+              10,
+              32,
+              32,
+              32,
+              32,
+              34,
+              104,
+              111,
+              109,
+              101,
+              80,
+              97,
+              103,
+              101,
+              34,
+              32,
+              58,
+              32,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              119,
+              119,
+              119,
+              46,
+              97,
+              99,
+              109,
+              101,
+              45,
+              99,
+              111,
+              114,
+              112,
+              46,
+              99,
+              111,
+              109,
+              34,
+              44,
+              10,
+              32,
+              32,
+              32,
+              32,
+              34,
+              112,
+              104,
+              111,
+              110,
+              101,
+              34,
+              32,
+              58,
+              32,
+              34,
+              52,
+              48,
+              56,
+              45,
+              56,
+              54,
+              55,
+              45,
+              53,
+              51,
+              48,
+              57,
+              34,
+              10,
+              32,
+              32,
+              125,
+              10,
+              125,
+              32,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 663,
+          "responseSize": 264
+        },
+        "id": "0e0a4696-c192-4708-9942-279ebbac8fe9"
+      },
+      {
+        "cursor": {
+          "ref": "6078baf4-fa26-4011-83ec-f998d844e346",
+          "length": 8,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "dd52b4b6-701d-451b-b4eb-a4e2beac573a"
+        },
+        "item": {
+          "id": "a95b9195-7a17-400f-823f-9f9cf370c78f",
+          "name": "GET intentory API Gateway",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "gateway",
+                "testAPI",
+                "0.0.1",
+                "inventory"
+              ],
+              "host": [
+                "dmunozparadigma",
+                "gateway",
+                "webmethodscloud",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "x-Gateway-APIKey",
+                "value": "508f7fa3-7471-4956-a827-5021ba590589"
+              }
+            ],
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "8f595e95-2b99-45f2-ab4c-d92bc2db4cbe",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  ""
+                ],
+                "_lastExecutionId": "6674bc2f-6bef-4666-a8c6-bb78187ed002"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "testAPI",
+              "0.0.1",
+              "inventory"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.6.0"
+            },
+            {
+              "key": "Host",
+              "value": "dmunozparadigma.gateway.webmethodscloud.com"
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "fdda6996-0d6a-4164-bb84-ae11f2babfb4",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "X-Requested-With,Content-Type,Accept,Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 31 Jan 2019 16:07:22 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "APICLOUD-ALB"
+            },
+            {
+              "key": "Content-Length",
+              "value": "213"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              32,
+              123,
+              10,
+              32,
+              32,
+              34,
+              105,
+              100,
+              34,
+              32,
+              58,
+              32,
+              34,
+              100,
+              50,
+              57,
+              48,
+              102,
+              49,
+              101,
+              101,
+              45,
+              54,
+              99,
+              53,
+              52,
+              45,
+              52,
+              98,
+              48,
+              49,
+              45,
+              57,
+              48,
+              101,
+              54,
+              45,
+              100,
+              55,
+              48,
+              49,
+              55,
+              52,
+              56,
+              102,
+              48,
+              56,
+              53,
+              49,
+              34,
+              44,
+              10,
+              32,
+              32,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              32,
+              58,
+              32,
+              34,
+              87,
+              105,
+              100,
+              103,
+              101,
+              116,
+              32,
+              65,
+              100,
+              97,
+              112,
+              116,
+              101,
+              114,
+              34,
+              44,
+              10,
+              32,
+              32,
+              34,
+              114,
+              101,
+              108,
+              101,
+              97,
+              115,
+              101,
+              68,
+              97,
+              116,
+              101,
+              34,
+              32,
+              58,
+              32,
+              34,
+              50,
+              48,
+              49,
+              54,
+              45,
+              48,
+              56,
+              45,
+              50,
+              57,
+              84,
+              48,
+              57,
+              58,
+              49,
+              50,
+              58,
+              51,
+              51,
+              46,
+              48,
+              48,
+              49,
+              90,
+              34,
+              44,
+              10,
+              32,
+              32,
+              34,
+              109,
+              97,
+              110,
+              117,
+              102,
+              97,
+              99,
+              116,
+              117,
+              114,
+              101,
+              114,
+              34,
+              32,
+              58,
+              32,
+              123,
+              10,
+              32,
+              32,
+              32,
+              32,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              32,
+              58,
+              32,
+              34,
+              65,
+              67,
+              77,
+              69,
+              32,
+              67,
+              111,
+              114,
+              112,
+              111,
+              114,
+              97,
+              116,
+              105,
+              111,
+              110,
+              34,
+              44,
+              10,
+              32,
+              32,
+              32,
+              32,
+              34,
+              104,
+              111,
+              109,
+              101,
+              80,
+              97,
+              103,
+              101,
+              34,
+              32,
+              58,
+              32,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              119,
+              119,
+              119,
+              46,
+              97,
+              99,
+              109,
+              101,
+              45,
+              99,
+              111,
+              114,
+              112,
+              46,
+              99,
+              111,
+              109,
+              34,
+              44,
+              10,
+              32,
+              32,
+              32,
+              32,
+              34,
+              112,
+              104,
+              111,
+              110,
+              101,
+              34,
+              32,
+              58,
+              32,
+              34,
+              52,
+              48,
+              56,
+              45,
+              56,
+              54,
+              55,
+              45,
+              53,
+              51,
+              48,
+              57,
+              34,
+              10,
+              32,
+              32,
+              125,
+              10,
+              125,
+              32,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 667,
+          "responseSize": 264
+        },
+        "id": "a95b9195-7a17-400f-823f-9f9cf370c78f",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "dea8350a-0bb1-4f90-ae0e-704b72a56436",
+          "length": 8,
+          "cycles": 1,
+          "position": 5,
+          "iteration": 0,
+          "httpRequestId": "785b1200-2227-4c59-b1f4-006eceb24f9f"
+        },
+        "item": {
+          "id": "1b91aedd-4ac2-4e5e-9b27-6a53c531486a",
+          "name": "GET cousine-types mock",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "gateway",
+                "Cooking",
+                "0.0.1",
+                "recipes"
+              ],
+              "host": [
+                "dmunozparadigma",
+                "gateway",
+                "webmethodscloud",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "x-Gateway-APIKey",
+                "value": "508f7fa3-7471-4956-a827-5021ba590589"
+              }
+            ],
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "Cooking",
+              "0.0.1",
+              "recipes"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.6.0"
+            },
+            {
+              "key": "Host",
+              "value": "dmunozparadigma.gateway.webmethodscloud.com"
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "3d9fec1b-e47a-4abb-a020-4d1516b7c33c",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "X-Requested-With,Content-Type,Accept,Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 31 Jan 2019 16:07:23 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "APICLOUD-ALB"
+            },
+            {
+              "key": "Content-Length",
+              "value": "32"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              32,
+              34,
+              115,
+              116,
+              114,
+              105,
+              110,
+              103,
+              34,
+              32,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 650,
+          "responseSize": 12
+        },
+        "id": "1b91aedd-4ac2-4e5e-9b27-6a53c531486a"
+      },
+      {
+        "cursor": {
+          "ref": "03f59602-a740-43c0-8417-350d15bb360f",
+          "length": 8,
+          "cycles": 1,
+          "position": 6,
+          "iteration": 0,
+          "httpRequestId": "a4c68647-6ea5-4103-9ca2-7505615ba43c"
+        },
+        "item": {
+          "id": "fb8e6d2c-14b7-4230-84c1-7d74287ecd00",
+          "name": "GET recipes swaggerhub",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "gateway",
+                "Cooking",
+                "0.0.1",
+                "recipes"
+              ],
+              "host": [
+                "dmunozparadigma",
+                "gateway",
+                "webmethodscloud",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "x-Gateway-APIKey",
+                "value": "508f7fa3-7471-4956-a827-5021ba590589"
+              }
+            ],
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "Cooking",
+              "0.0.1",
+              "recipes"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.6.0"
+            },
+            {
+              "key": "Host",
+              "value": "dmunozparadigma.gateway.webmethodscloud.com"
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "04e6e393-3854-4da7-b9af-5b86c9687de4",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "X-Requested-With,Content-Type,Accept,Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 31 Jan 2019 16:07:23 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "APICLOUD-ALB"
+            },
+            {
+              "key": "Content-Length",
+              "value": "32"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              32,
+              34,
+              115,
+              116,
+              114,
+              105,
+              110,
+              103,
+              34,
+              32,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 647,
+          "responseSize": 12
+        },
+        "id": "fb8e6d2c-14b7-4230-84c1-7d74287ecd00"
+      },
+      {
+        "cursor": {
+          "ref": "81cb2771-d7fb-4729-8c01-3b6ecf07ff47",
+          "length": 8,
+          "cycles": 1,
+          "position": 7,
+          "iteration": 0,
+          "httpRequestId": "db2e5a8d-27f6-4edb-9f80-a6be390eb151"
+        },
+        "item": {
+          "id": "4a694ab9-f813-4a4a-861f-b2e964e01604",
+          "name": "GET recipes swaggerhub Copy",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "gateway",
+                "Cooking",
+                "0.0.1",
+                "recipes"
+              ],
+              "host": [
+                "dmunozparadigma",
+                "gateway",
+                "webmethodscloud",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "x-Gateway-APIKey",
+                "value": "508f7fa3-7471-4956-a827-5021ba590589"
+              }
+            ],
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "gateway",
+              "Cooking",
+              "0.0.1",
+              "recipes"
+            ],
+            "host": [
+              "dmunozparadigma",
+              "gateway",
+              "webmethodscloud",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-Gateway-APIKey",
+              "value": "508f7fa3-7471-4956-a827-5021ba590589"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.6.0"
+            },
+            {
+              "key": "Host",
+              "value": "dmunozparadigma.gateway.webmethodscloud.com"
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            }
+          ],
+          "method": "GET",
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "50f31876-1810-40e9-95bc-b6c5927c4e60",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "X-Requested-With,Content-Type,Accept,Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 31 Jan 2019 16:07:24 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "APICLOUD-ALB"
+            },
+            {
+              "key": "Content-Length",
+              "value": "32"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              32,
+              34,
+              115,
+              116,
+              114,
+              105,
+              110,
+              103,
+              34,
+              32,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 653,
+          "responseSize": 12
+        },
+        "id": "4a694ab9-f813-4a4a-861f-b2e964e01604"
+      }
+    ],
+    "transfers": {
+      "responseTotal": 618
+    },
+    "failures": [],
+    "error": null
+  }
+}

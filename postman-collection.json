@@ -232,6 +232,21 @@
 		},
 		{
 			"name": "GET cousine-types mock",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d94aa6d6-eb08-4319-b830-cedfa3c1882f",
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -254,7 +269,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://dmunozparadigma.gateway.webmethodscloud.com/gateway/Cooking/0.0.1/recipes",
+					"raw": "http://dmunozparadigma.gateway.webmethodscloud.com/gateway/Cooking/0.0.1/cousine-types",
 					"protocol": "http",
 					"host": [
 						"dmunozparadigma",
@@ -266,7 +281,7 @@
 						"gateway",
 						"Cooking",
 						"0.0.1",
-						"recipes"
+						"cousine-types"
 					]
 				}
 			},
